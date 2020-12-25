@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0750392c0b.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music_container">
+          <div class="music">
+            <h3>bum bhole</h3>
+            <h5>arijit singh</h5>
+          </div>
+          <div class="wallper">
+            <img src="./anshul.jpg" alt="" class="im " id="im1">
+          </div>
+          <audio src="./song/BTS - Dynamite myfreemp3.vip .mp3"  ></audio>
+          <div class="button">
+            <i class="material-icons" id="prev" >fast_rewind</i>
+            <i class="material-icons" id="play" >pause_circle_filled</i>
+            <i class="material-icons" id="next" >fast_forward</i>
+          </div>
+        </div>>
+    </div>
+   
+</body>
+
+</html>
+<script>
+  const img=document.querySelector("#im1")
+  const music=document.querySelector("audio");
+  const play=document.getElementById("play");
+  const prev=document.getElementById("prev");
+  const next=document.getElementById("next");
+  const title=document.querySelector("h3");
+  const artist=document.querySelector("h5");
+  var isplay=true;
+  const songs=[
+    {
+      name:"black",
+      title:"black",
+      artist:"dj snake"
+    },
+    {
+      name:"bts",
+      title:"bts",
+      artist:"ketty pari"
+    },
+    {
+      name:"mariah",
+      title:"mariah",
+      artist:"ketty"
+    }
+  ]
+  play.addEventListener('click',()=>{
+    if(isplay)
+    {
+    music.play();
+    img.classList.add('anmi');
+    isplay=false;
+    }
+    else{
+      music.pause();
+      img.classList.remove('anmi');
+      isplay=true;
+    }
+  })
+  const playsong = (song)=>{
+    title.textContent=song.title;
+    artist.textContent=song.artist;
+    music.src="song/"+song.name+".mp3"
+  }
+  var index=1;
+  playsong(songs[index]);
+  prev.addEventListener('click',()=>{
+       if(index==0)
+       {
+         index=2;
+       }
+       else
+       {
+       index=index-1;
+       }
+       playsong(songs[index]);
+       music.play();
+  })
+  next.addEventListener('click',()=>{
+    if(index==2)
+    {
+      index=0;
+    }
+    else{
+    index=index+1;
+    }
+    playsong(songs[index]);
+    music.play();
+  })
+</script>

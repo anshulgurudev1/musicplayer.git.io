@@ -1,0 +1,71 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.container
+{
+   width: 100vw;
+   height: 100vh;
+   background-color: rgb(190, 183, 183);
+   display: grid;
+   place-items: center;
+}
+.music_container{
+    width: 18rem;
+    height: 30em;
+    border-radius: 2rem;
+    box-shadow: 0rem 1.2rem 3rem 0.5rem rgba(0, 0,0, 2);
+    background-color: rgb(212, 200, 200);
+    text-align: center;
+}
+.wallper{
+    height: 10rem;
+    width: 10rem;
+    margin: auto;
+    margin-bottom: 5rem;
+}
+.im{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+ 
+}
+.music{
+    margin-top: 3rem;
+    margin-bottom:5rem;
+    text-align: center;
+}
+.music h3 {
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+}
+.music h5{
+    text-transform: capitalize;
+}
+.button #prev,#play,#next{
+      
+    font-size: 2rem;
+    border-radius: 50%;
+    cursor: pointer;  
+   
+}
+.button #prev, #next{
+    background-color: rgb(221, 209, 209)
+    
+    
+}
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.anmi{
+    animation: rotation  3s linear infinite ;
+}
+@keyframes rotation {
+     from { transform: rotate(0);}
+     to {transform: rotate(360deg);}
+}
